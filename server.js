@@ -3,6 +3,7 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
+
 app.use(bodyParser.json())
 app.use(morgan('dev'));
 const dotenv = require('dotenv');
@@ -14,7 +15,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/envelopes', require('./src/routes/envelopesRouter'))
 app.use('/api/transactions', require('./src/routes/transactionRouter'))
-
+app.use('/api/docs', require('./src/routes/docs'))
 const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`)
