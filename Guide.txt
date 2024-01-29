@@ -1,0 +1,33 @@
+Database models:
+Table envelopes {
+  id integer
+  title varchar
+  budget integer
+}
+
+Table envelopes_transactions {
+  title varchar
+  amount integer
+  date date
+  envelope_id integer
+}
+
+### Envelopes:
+----
+ - Retrieve envelopes using `GET /api/v1/envelopes`
+ - Retrieve a single envelope using `GET /api/v1/envelopes/{id}`
+ - Create an envelope using `POST /api/v1/envelopes`
+ - Update an envelope using `PUT /api/v1/envelope/{id}`
+ - Delete an envelope using `DELETE /api/v1/envelope/{id}`
+ - Create an envelope transaction using `POST /api/v1/envelop/{id}`
+
+### Transactions:
+___
+ - Retrieve transactions using `GET /api/v1/transactions`
+ - Retrieve a single transaction using `GET /api/v1/transactions/{id}`
+ - Update a transaction using `PUT /api/v1/transactions/{id}`
+ - Delete an envelope using `DELETE /api/v1/transactions/{id}`
+
+
+Transactions transfer an amount from an envelope budget to another one, updates the budgets and add a transaction to the envelope_transactions 
+
